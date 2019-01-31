@@ -11,17 +11,17 @@ import re
 from sklearn import tree
 
 #reading
-train=pd.read_csv(r"D:\Users\pratprak\Documents\titanic test\Fw__titanic_data_set\train.csv")
-test=pd.read_csv(r"D:\Users\pratprak\Documents\titanic test\Fw__titanic_data_set\test.csv")
-y_true = pd.read_csv(r"D:\Users\pratprak\Documents\titanic test\Fw__titanic_data_set\gender_submission.csv")
-sample = pd.read_csv(r"D:\Users\pratprak\Documents\titanic test\Fw__titanic_data_set\test1.csv")
+train=pd.read_csv("...\train.csv")
+test=pd.read_csv("...\test.csv")
+y_true = pd.read_csv("...\gender_submission.csv")
+
 
 #store our Passengers Ids for easy access
 PassengerId = test['PassengerId']
 
 original_train = train.copy()
 
-full_data = [train, test, sample]
+full_data = [train, test]
 
 # Feature that tells whether a passenger had a cabin on the Titanic
 train['Has_Cabin'] =  train["Cabin"].apply(lambda x:0 if type(x) == float else 1)
@@ -104,7 +104,7 @@ for dataset in full_data:
 drop_elements = ['PassengerId', 'Name', 'Ticket', 'Cabin', 'SibSp']
 train = train.drop(drop_elements, axis = 1)
 test = test.drop(drop_elements, axis = 1)
-sample_test = sample.drop(drop_elements, axis = 1)
+
 
 print(train.head(3))
 
