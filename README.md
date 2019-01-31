@@ -7,7 +7,7 @@
 The following code gives the idea of Supervised Machine Learning using decision Tree.
 The problem statement is As Follows
 
-  - we want to predict whether a person survived or not.
+  - we want to predict whether a person survived or not on the titanic ship.
   - We have the datasets of all the passengers that we'll use to train our Model(Check Datasets Folders)
 
 # PreProcessing The Data
